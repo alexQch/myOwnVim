@@ -66,6 +66,9 @@ filetype plugin on
 filetype indent on
 let g:tex_flavor='latex'
 
+imap <C-l> <Plug>IMAP_JumpForward
+
+
 if has('clipboard')
 	set clipboard=unnamedplus
 endif
