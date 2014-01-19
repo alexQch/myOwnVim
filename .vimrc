@@ -23,7 +23,6 @@ Bundle 'gmarik/vundle'
 	    Bundle 'bling/vim-bufferline'
             Bundle 'scrooloose/nerdcommenter'
             Bundle 'godlygeek/tabular'
-            Bundle 'SirVer/ultisnips'
             Bundle 'nathanaelkane/vim-indent-guides'
 
 
@@ -40,7 +39,7 @@ Bundle 'gmarik/vundle'
             Bundle 'derekwyatt/vim-sbt'
             " }
 
-        Bundle 'Valloric/YouCompleteMe'
+
 
 	    "Git"
             Bundle 'tpope/vim-fugitive'
@@ -213,85 +212,6 @@ nnoremap <F4> :NumbersOnOff<CR>
     "}
 
 
-"youcompleteme" {
-            let g:acp_enableAtStartup = 0
-
-            " enable completion from tags
-            let g:ycm_collect_identifiers_from_tags_files = 1
-
-            " remap Ultisnips for compatibility for YCM
-            let g:UltiSnipsExpandTrigger = '<C-j>'
-            let g:UltiSnipsJumpForwardTrigger = '<C-j>'
-            let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
-            
-            " Enable omni completion.
-            autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-            autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-            autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-            autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-            autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-            autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-            autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-
-            " Haskell post write lint and check with ghcmod
-            " $ `cabal install ghcmod` if missing and ensure
-            " ~/.cabal/bin is in your $PATH.
-            if !executable("ghcmod")
-                autocmd BufWritePost *.hs GhcModCheckAndLintAsync
-            endif
-
-            " For snippet_complete marker.
-            if has('conceal')
-                set conceallevel=2 concealcursor=i
-            endif
-
-            " Disable the neosnippet preview candidate window
-            " When enabled, there can be too much visual noise
-            " especially when splits are used.
-            set completeopt-=preview
-
-            "}
-
-            " Tabularize {
-            nmap <Leader>a& :Tabularize /&<CR>
-            vmap <Leader>a& :Tabularize /&<CR>
-            nmap <Leader>a= :Tabularize /=<CR>
-            vmap <Leader>a= :Tabularize /=<CR>
-            nmap <Leader>a: :Tabularize /:<CR>
-            vmap <Leader>a: :Tabularize /:<CR>
-            nmap <Leader>a:: :Tabularize /:\zs<CR>
-            vmap <Leader>a:: :Tabularize /:\zs<CR>
-            nmap <Leader>a, :Tabularize /,<CR>
-            vmap <Leader>a, :Tabularize /,<CR>
-            nmap <Leader>a,, :Tabularize /,\zs<CR>
-            vmap <Leader>a,, :Tabularize /,\zs<CR>
-            nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-            vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-            " }
-
-             " ctrlp {
-        let g:ctrlp_working_path_mode = 'ra'
-        nnoremap <silent> <D-t> :CtrlP<CR>
-        nnoremap <silent> <D-r> :CtrlPMRU<CR>
-        let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-            \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
-
-        if executable('ag')
-            let s:ctrlp_fallback = 'ag %s --nocolor -l -g ""'
-        elseif executable('ack')
-            let s:ctrlp_fallback = 'ack %s --nocolor -f'
-        else
-            let s:ctrlp_fallback = 'find %s -type f'
-        endif
-        let g:ctrlp_user_command = {
-            \ 'types': {
-                \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
-                \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-            \ },
-            \ 'fallback': s:ctrlp_fallback
-        \ }
-    "}
 
 
 " GUI Settings {
