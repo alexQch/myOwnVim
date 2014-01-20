@@ -13,7 +13,7 @@ Bundle 'gmarik/vundle'
             Bundle 'altercation/vim-colors-solarized'
             Bundle 'spf13/vim-colors'
             Bundle 'tpope/vim-surround'
-            Bundle 'myusuf3/numbers.vim'
+            "Bundle 'myusuf3/numbers.vim'
             Bundle 'spf13/vim-autoclose'
             Bundle 'kien/ctrlp.vim'
             Bundle 'terryma/vim-multiple-cursors'
@@ -68,9 +68,9 @@ let g:tex_flavor='latex'
 imap <C-l> <Plug>IMAP_JumpForward
 
 
-if has('clipboard')
-	set clipboard=unnamedplus
-endif
+"if has('clipboard')
+	"set clipboard=unnamedplus
+"endif
 
 set history=1000                    " Store a ton of history (default is 20)
 set spell                           " Spell checking on
@@ -219,7 +219,7 @@ nnoremap <F4> :NumbersOnOff<CR>
     " GVIM- (here instead of .gvimrc)
         set guioptions-=T           " Remove the toolbar
         set lines=40                " 40 lines of text instead of 24
-        set guifont=Consolas\ Regular\ 11
+        "set guifont=Consolas\ Regular\ 11
 " }
 "
 
